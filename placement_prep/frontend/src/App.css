@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  background: #f5f7fc;
+  color: #19243a;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 250px;
+  overflow-y: auto;
+  background: #17233f;
+  padding: 26px 16px;
+  color: white;
+}
+
+.sidebar h2 {
+  font-size: 27px;
+  margin: 0 0 8px;
+}
+
+.sidebar h2 span {
+  color: #8d9cff;
+}
+
+.muted {
+  color: #8995ad;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  margin: 4px 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #d8deeb;
+}
+
+.nav-item:hover,
+.nav-item.selected {
+  background: #34466d;
+  color: white;
+}
+
+.main {
+  margin-left: 250px;
+  padding: 32px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+header h1 {
+  margin: 8px 0;
+  font-size: 30px;
+}
+
+header p {
+  color: #778198;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #3349a5;
+  font-weight: bold;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(120deg, #354a9c, #7168d8);
+}
+
+.welcome p {
+  line-height: 1.6;
+}
+
+.welcome h2 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.welcome button,
+.module-page button {
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 8px;
+  background: white;
+  color: #34469a;
+  font-weight: 600;
+}
+
+.welcome-icon {
+  font-size: 65px;
+}
+
+.section-title {
+  margin: 30px 0 16px;
+  font-size: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.stats article,
+.feature,
+.module-page {
+  background: white;
+  border: 1px solid #e7eaf2;
+  border-radius: 13px;
+  padding: 20px;
+}
+
+.stats article span {
+  font-size: 25px;
+}
+
+.stats article p,
+.feature p,
+.module-page p {
+  color: #788198;
+  line-height: 1.5;
+}
+
+.stats article h2 {
+  font-size: 21px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.feature {
+  text-align: left;
+  color: #19243a;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px #1b2b5012;
+}
+
+.feature-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #edf0ff;
+  font-size: 23px;
+}
+
+.feature h3 {
+  font-size: 16px;
+}
+
+.feature p {
+  font-size: 13px;
+}
+
+.open {
+  color: #5364c8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.module-page {
+  max-width: 650px;
+  padding: 32px;
+}
+
+.module-page button {
+  background: #344a9c;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 210px;
+  }
+
+  .main {
+    margin-left: 210px;
+    padding: 22px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    max-height: 260px;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 18px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+}
+.profile-page {
+  width: 100%;
+  max-width: 650px;
+}
+
+.profile-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 8px;
+  color: #34415a;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.profile-form input,
+.profile-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dce1ec;
+  border-radius: 8px;
+  background: white;
+  color: #19243a;
+  font: inherit;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  outline: 2px solid #a5b4fc;
+  border-color: #5364c8;
+}
+
+.profile-form .save-button {
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  background: #354a9c;
+  color: white;
+  font-weight: 600;
+}
+
+.success-message {
+  color: #15803d !important;
+  font-weight: 600;
+}
+
+.storage-note {
+  margin-top: 22px;
+  font-size: 12px;
+}
+
+/* Aptitude Preparation */
+
+.apt-card {
+  border: 1px solid #dfe5f3;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 16px 0;
+  background: #fff;
+  text-align: left;
+}
+
+.apt-option {
+  display: block;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.apt-explain {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #eef2ff;
+}
+
+.apt-error {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fdecec;
+  color: #a12626;
+}
+
+.stat-note {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7a99;
+}

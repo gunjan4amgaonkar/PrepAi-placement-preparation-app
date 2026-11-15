@@ -1,0 +1,126 @@
+/* Dark theme: lets the animated background show through glassy panels.
+   Loaded after App.css / index.css, so these rules override the light styles. */
+
+.app { position: relative; color: #e6edf7; }
+
+body { background: #060a14; color: #e6edf7; }
+
+.app .sidebar,
+.app .main { position: relative; z-index: 1; }
+
+.app .sidebar {
+  position: fixed;
+  z-index: 2;
+  background: rgba(8, 13, 28, 0.72);
+  backdrop-filter: blur(14px);
+  border-right: 1px solid rgba(120, 160, 255, 0.16);
+}
+
+.app .sidebar h2 span { color: #38bdf8; }
+.app .muted { color: #8fa0bf; }
+.app .nav-item { color: #c3cee2; }
+.app .nav-item:hover,
+.app .nav-item.selected {
+  background: rgba(56, 189, 248, 0.12);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.35);
+}
+
+.app header h1,
+.app h1, .app h2, .app h3 { color: #f1f5fb; }
+.app header p { color: #9fb0cc; }
+
+.app .avatar { background: rgba(56, 189, 248, 0.15); color: #7dd3fc; box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.4); }
+
+.app .welcome {
+  background: linear-gradient(120deg, rgba(37, 99, 235, 0.55), rgba(124, 58, 237, 0.45));
+  border: 1px solid rgba(125, 170, 255, 0.28);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.12);
+}
+.app .welcome button { background: #f1f5fb; color: #1e2a5a; }
+
+/* Glass panels */
+.app .stats article,
+.app .feature,
+.app .module-page,
+.app .practice-card,
+.app .apt-card,
+.app .coding-progress {
+  background: rgba(13, 20, 40, 0.8);
+  border: 1px solid rgba(125, 170, 255, 0.18);
+  backdrop-filter: blur(12px);
+  box-shadow: none;
+  color: #e6edf7;
+}
+
+.app .stats article p,
+.app .feature p,
+.app .module-page p,
+.app .stat-note,
+.app .editor-note,
+.app .coding-progress span,
+.app .practice-meta,
+.app .coding-header p { color: #a3b3cf; }
+
+.app .feature { color: #e6edf7; }
+.app .feature:hover {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 26px rgba(56, 189, 248, 0.18);
+}
+.app .feature-icon { background: rgba(56, 189, 248, 0.14); }
+.app .open { color: #7dd3fc; }
+
+.app .module-page button { background: #2563eb; color: #fff; }
+
+.app .apt-explain { background: rgba(56, 189, 248, 0.10); }
+.app .apt-error { background: rgba(248, 113, 113, 0.12); color: #fca5a5; }
+
+/* Forms */
+.app .profile-form label,
+.app .coding-controls label,
+.app .practice-card label { color: #cdd8ec; }
+
+.app .profile-form input,
+.app .profile-form select,
+.app .coding-controls select,
+.app .practice-card select {
+  background: rgba(8, 13, 28, 0.85);
+  color: #e6edf7;
+  border: 1px solid rgba(125, 170, 255, 0.28);
+}
+.app .profile-form input:focus,
+.app .profile-form select:focus { outline: 2px solid #38bdf8; border-color: #38bdf8; }
+.app .profile-form .save-button { background: #2563eb; }
+.app .success-message { color: #4ade80 !important; }
+
+/* Coding page */
+.app .coding-page { color: #e6edf7; }
+.app .coding-header {
+  background: linear-gradient(125deg, rgba(37, 99, 235, 0.35), rgba(124, 58, 237, 0.25));
+  border: 1px solid rgba(125, 170, 255, 0.25);
+}
+.app .coding-eyebrow { color: #7dd3fc !important; }
+.app .coding-progress strong { color: #7dd3fc; }
+.app .coding-tabs { border-bottom-color: rgba(125, 170, 255, 0.2); }
+.app .coding-tabs button { color: #9fb0cc; }
+.app .coding-tabs button.active { color: #7dd3fc; border-bottom-color: #38bdf8; }
+.app .practice-track { background: rgba(125, 170, 255, 0.18); }
+.app .practice-track div { background: #38bdf8; box-shadow: 0 0 10px #38bdf8; }
+
+.app .answer-option {
+  background: rgba(8, 13, 28, 0.7);
+  border: 1px solid rgba(125, 170, 255, 0.22);
+  color: #e6edf7;
+}
+.app .answer-option > span { background: rgba(125, 170, 255, 0.16); color: #cfe0ff; }
+.app .answer-option.chosen { border-color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+.app .answer-option.correct { border-color: #4ade80; background: rgba(74, 222, 128, 0.12); }
+.app .answer-option.incorrect { border-color: #f87171; background: rgba(248, 113, 113, 0.12); }
+
+.app .primary-btn { background: #0ea5e9; border-color: #38bdf8; color: #03222e; box-shadow: 0 0 16px rgba(56, 189, 248, 0.35); }
+.app .secondary-btn { background: transparent; color: #cdd8ec; border-color: rgba(125, 170, 255, 0.35); }
+.app .practice-feedback { color: #4ade80; }
+.app .sample-box,
+.app .code-editor { background: rgba(4, 8, 18, 0.9); border: 1px solid rgba(125, 170, 255, 0.25); }
+.app .code-editor { color: #86efac; }

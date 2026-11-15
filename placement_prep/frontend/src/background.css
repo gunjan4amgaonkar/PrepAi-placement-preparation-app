@@ -1,0 +1,140 @@
+/* Animated background layer for PrepAI */
+
+.bg-root {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 700px at 78% 8%, #0e1a3a 0%, transparent 60%),
+    #060a14;
+}
+
+/* Drifting grid, faded toward the edges */
+.bg-grid {
+  position: absolute;
+  inset: -64px;
+  background-image:
+    linear-gradient(rgba(120, 160, 255, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 160, 255, 0.10) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 55% 40%, #000 30%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 70% at 55% 40%, #000 30%, transparent 85%);
+  animation: bg-grid-drift 18s linear infinite;
+}
+
+@keyframes bg-grid-drift {
+  to { transform: translate(64px, 64px); }
+}
+
+/* Soft glowing orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+}
+
+.bg-orb-a {
+  width: 520px; height: 520px; right: 6%; top: 10%;
+  background: #2563eb;
+  animation: bg-float-a 22s ease-in-out infinite;
+}
+
+.bg-orb-b {
+  width: 420px; height: 420px; left: 22%; bottom: -8%;
+  background: #7c3aed;
+  opacity: 0.35;
+  animation: bg-float-b 26s ease-in-out infinite;
+}
+
+.bg-orb-c {
+  width: 320px; height: 320px; left: 48%; top: 38%;
+  background: #06b6d4;
+  opacity: 0.22;
+  animation: bg-float-a 30s ease-in-out infinite reverse;
+}
+
+@keyframes bg-float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-60px, 50px) scale(1.12); }
+}
+
+@keyframes bg-float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, -40px) scale(0.92); }
+}
+
+/* Circuit traces with travelling pulses */
+.bg-traces {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.trace-base {
+  fill: none;
+  stroke: rgba(125, 170, 255, 0.16);
+  stroke-width: 2;
+}
+
+.trace-pulse {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 8 92;
+  filter: drop-shadow(0 0 6px #38bdf8);
+  animation: bg-pulse 8s linear infinite;
+}
+
+@keyframes bg-pulse {
+  from { stroke-dashoffset: 8; }
+  to { stroke-dashoffset: -92; }
+}
+
+/* Twinkling four-point sparkles */
+.bg-sparkle {
+  position: absolute;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px currentColor);
+  animation: bg-twinkle 4.2s ease-in-out infinite;
+}
+
+@keyframes bg-twinkle {
+  0%, 100% { opacity: 0.1; transform: scale(0.6) rotate(0deg); }
+  50% { opacity: 0.95; transform: scale(1.15) rotate(45deg); }
+}
+
+/* Floating code chips that drift upward */
+.bg-chip {
+  position: absolute;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font: 600 12px/1 "JetBrains Mono", Consolas, monospace;
+  white-space: nowrap;
+  opacity: 0;
+  animation: bg-rise 40s linear infinite;
+}
+
+.bg-chip-pink { color: #f0abfc; background: rgba(240, 171, 252, 0.10); border: 1px solid rgba(240, 171, 252, 0.28); }
+.bg-chip-green { color: #86efac; background: rgba(74, 222, 128, 0.10); border: 1px solid rgba(74, 222, 128, 0.30); }
+.bg-chip-blue { color: #7dd3fc; background: rgba(56, 189, 248, 0.10); border: 1px solid rgba(56, 189, 248, 0.30); }
+
+@keyframes bg-rise {
+  0% { transform: translateY(0); opacity: 0; }
+  12% { opacity: 0.55; }
+  80% { opacity: 0.55; }
+  100% { transform: translateY(-115vh); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid, .bg-orb, .trace-pulse, .bg-sparkle, .bg-chip {
+    animation: none;
+  }
+  .bg-sparkle { opacity: 0.6; }
+  .bg-chip { opacity: 0.6; }
+  .trace-pulse { display: none; }
+}

@@ -1,0 +1,290 @@
+/* PrepAI global styles.
+   Base layout and the sidebar/dashboard live in App.css;
+   this file holds shared defaults and the Coding Practice styles. */
+
+:root {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* PrepAI Coding Practice */
+
+.coding-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px;
+  color: #172033;
+}
+
+.coding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(125deg, #dbeafe, #eef2ff);
+  margin-bottom: 24px;
+}
+
+.coding-header h1 {
+  font-size: clamp(25px, 4vw, 36px);
+  margin: 8px 0;
+}
+
+.coding-header p {
+  margin: 8px 0;
+  color: #475569;
+}
+
+.coding-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #1d4ed8 !important;
+}
+
+.coding-progress {
+  min-width: 125px;
+  padding: 18px;
+  border-radius: 14px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coding-progress strong {
+  font-size: 25px;
+  color: #1d4ed8;
+}
+
+.coding-progress span,
+.practice-meta {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.coding-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.coding-controls label,
+.practice-card label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.coding-controls select,
+.practice-card select {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: white;
+  color: #172033;
+  min-width: 190px;
+}
+
+.coding-tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.coding-tabs button {
+  padding: 13px 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.coding-tabs button.active {
+  color: #1d4ed8;
+  border-bottom-color: #2563eb;
+}
+
+.practice-card {
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 5px 20px #0f172a08;
+}
+
+.practice-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.practice-track {
+  height: 6px;
+  border-radius: 20px;
+  background: #e2e8f0;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.practice-track div {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.2s;
+}
+
+.practice-card h2 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.answer-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: white;
+  color: #172033;
+  cursor: pointer;
+}
+
+.answer-option > span {
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-weight: 700;
+}
+
+.answer-option.chosen {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.answer-option.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.answer-option.incorrect {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.practice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn {
+  border: 1px solid #1d4ed8;
+  background: #2563eb;
+  color: white;
+}
+
+.primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  border: 1px solid #cbd5e1;
+  background: white;
+  color: #334155;
+}
+
+.practice-feedback {
+  color: #166534;
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+.sample-box {
+  padding: 18px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.code-editor {
+  width: 100%;
+  min-height: 270px;
+  margin-top: 8px;
+  padding: 18px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #d1fae5;
+  font: 14px/1.7 Consolas, monospace;
+  resize: vertical;
+  box-sizing: border-box;
+  tab-size: 4;
+}
+
+.editor-note {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .coding-page {
+    padding: 14px;
+  }
+
+  .coding-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .coding-progress {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .practice-card {
+    padding: 18px;
+  }
+
+  .coding-controls,
+  .coding-controls label,
+  .coding-controls select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
